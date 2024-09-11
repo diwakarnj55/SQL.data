@@ -1,0 +1,44 @@
+{% extends 'theme.html' %}
+{% load static %}
+
+{% block content %}
+      <div class="jewellery_section">
+         <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <h1 class="fashion_taital">Jewellery Accessories</h1>
+                     <div class="fashion_section_2">
+                        <div class="row">
+                           {% for a in item %}
+                           <div class="col-lg-4 col-sm-4">
+                              <a href="{% url 'cart' a.id %}" class="effect-lily tm-cart-link tm-pt-60">
+                              <div class="box_main">
+                                 <h4 class="shirt_text">{{a.jel_item}}</h4>
+                                 <p class="price_text">Start Price  <span style="color: #262626;">{{a.jel_rate}}</span></p>
+                                 <div class="jewellery_img" style="width: 300px;"><img src="{{a.jel_image.url}}"></div>
+                                 <div class="btn_main">
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                 </div>
+                              </div>
+                           </a>
+                           </div>
+                           {% endfor %}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+            </a>
+            <div class="loader_main">
+               <div class="loader"></div>
+            </div>
+         </div>
+      </div>
+{% endblock %}

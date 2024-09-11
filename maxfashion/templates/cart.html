@@ -1,0 +1,27 @@
+{% extends 'theme.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Card details</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+        <div class="box_main">
+            <h4 class="shirt_text">{{item.jel_item}}</h4>
+            <p class="price_text">Start Price  <span style="color: #262626;">{{item.jel_rate}}</span></p>
+            <div class="jewellery_img" style="width: 300px;"><img src="{{item.jel_image.url}}"></div>
+            <button type="submit" class="btn btn-success">Add to cart</button>
+            </div>
+              </form>
+         </div>
+</body>
+</html>
+{% endblock %}
